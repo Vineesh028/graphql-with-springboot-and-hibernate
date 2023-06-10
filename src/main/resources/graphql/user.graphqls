@@ -1,0 +1,18 @@
+type User {
+    id: ID!
+    name: String
+    nickName: String
+    email: String!
+}
+
+type Query {
+    findById(id: ID): User
+    findByEmail(email: String): User
+    findAll(page: Int, pageSize: Int): [User]!
+}
+
+type Mutation {
+    createUser(name: String!, nickName: String!, email: String!) : User!
+    updateUser(id: ID, name: String!, nickName: String!, email: String!) : User!
+    deleteUser(id: ID): Boolean!
+}
